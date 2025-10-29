@@ -16,22 +16,17 @@ const int RACES = 4;
 const int STRUCTURES = 3;
 
 
+
+
+
+int main() {
+
  // Data structures for the races
    void runBasicExperiment() {
    vector<string> vec;
     list<string> lst;
     set<string> st;
    }
-// Read data from file
-    ifstream file("codes.txt");
-    string line;
-    while (getline(file, line)) {
-        vec.push_back(line);
-    }
-   file.close();
-
-   
-int main() {
    
     
     // RACE 1: READING
