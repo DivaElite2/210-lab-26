@@ -15,11 +15,7 @@ const int RUNS = 15;
 const int RACES = 4;
 const int STRUCTURES = 3;
 
-
-
-
-
-int main() {
+nt main() {
 
  // Data structures for the races
    
@@ -72,7 +68,7 @@ int main() {
     
     // RACE 2: SORTING
     cout << "=== RACE 2: SORTING ===\n";
-    
+    long long results [RUNS][RACES][STRUCTURES] ={0};
     // Vector sorting
     start = high_resolution_clock::now();
     sort(vec.begin(), vec.end());
@@ -83,7 +79,7 @@ int main() {
     start = high_resolution_clock::now();
     lst.sort();
     end = high_resolution_clock::now();
-    auto lstSortTime = duration_cast<microseconds>(end - start);
+    results [RUNS][RACES][STRUCTURES] = duration_cast<microseconds>(end - start);
     
     cout << "Vector: " << vecSortTime.count() << " microseconds\n";
     cout << "List: " << lstSortTime.count() << " microseconds\n";
