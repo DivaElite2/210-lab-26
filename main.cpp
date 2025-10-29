@@ -2,10 +2,28 @@
 #include <chrono>
 #include <list>
 #include <set>
+#include <map>
 #include <fstream>
 #include <algorithm>
+#include <string>
+#include <vector>
+#include <forward_list>
 using namespace std;
 using namespace std::chrono;
+
+const int RUNS = 15;
+const int RACES = 4;
+const int STRUCTURES = 3;
+
+
+
+
+
+
+
+
+
+
 
 int main() {
     // Data structures for the races
