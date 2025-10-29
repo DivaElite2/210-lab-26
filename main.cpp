@@ -16,31 +16,30 @@ const int RACES = 4;
 const int STRUCTURES = 3;
 
 
-
-
-
-
-
-
-
-
-
-int main() {
-    // Data structures for the races
-    vector<string> vec;
+ // Data structures for the races
+   void runBasicExperiment() {
+   vector<string> vec;
     list<string> lst;
     set<string> st;
+   }
+// Read data from file
+    ifstream file("codes.txt");
+    string line;
+    while (getline(file, line)) {
+        vec.push_back(line);
+    }
+   file.close();
+
+   
+int main() {
+   
     
     // RACE 1: READING
     cout << "=== RACE 1: READING 20,000 ELEMENTS ===\n";
     
     // Vector reading
     auto start = high_resolution_clock::now();
-    ifstream file("data.txt");
-    string line;
-    while (getline(file, line)) {
-        vec.push_back(line);
-    }
+   
     auto end = high_resolution_clock::now();
     auto vecReadTime = duration_cast<microseconds>(end - start);
     
