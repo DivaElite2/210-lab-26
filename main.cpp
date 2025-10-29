@@ -22,10 +22,17 @@ const int STRUCTURES = 3;
 int main() {
 
  // Data structures for the races
-   void runBasicExperiment() {
+   
    vector<string> vec;
     list<string> lst;
     set<string> st;
+
+   ifstream file ("codes.txt");
+   string line;
+
+   if (!file.is_open()) {
+    cout<< "Error cannot open codes.txt\n";
+      return 1;
    }
    
     
