@@ -111,7 +111,7 @@ for (int run = 0; run < RUNS; run++) {
     advance(vecIt, vec.size() / 2);
     vec.insert(vecIt, "TESTCODE");
     end = high_resolution_clock::now();
-    auto vecInsertTime = duration_cast<microseconds>(end - start);
+    results[run][INSERTING][VECTOR]= duration_cast<microseconds>(end - start).count();
     
     // List inserting in middle
     start = high_resolution_clock::now();
@@ -119,13 +119,13 @@ for (int run = 0; run < RUNS; run++) {
     advance(lstIt, lst.size() / 2);
     lst.insert(lstIt, "TESTCODE");
     end = high_resolution_clock::now();
-    auto lstInsertTime = duration_cast<microseconds>(end - start);
+    results[run][INSERTING][VECTOR] = duration_cast<microseconds>(end - start).count();
     
     // Set inserting
     start = high_resolution_clock::now();
     st.insert("TESTCODE");
     end = high_resolution_clock::now();
-    auto setInsertTime = duration_cast<microseconds>(end - start);
+    results[run][INSERTING][SET] = duration_cast<microseconds>(end - start).count();//
     
     cout << "Vector: " << results[run][SORTING][VECTOR] << " microseconds\n";
     cout << "List: " << results[run][SORTING][LIST]<< " microseconds\n";
@@ -140,7 +140,7 @@ for (int run = 0; run < RUNS; run++) {
     advance(vecIt, vec.size() / 2);
     vec.erase(vecIt);
     end = high_resolution_clock::now();
-    auto vecDeleteTime = duration_cast<microseconds>(end - start);
+   results[run][DELETING][VECTOR] = duration_cast<microseconds>(end - start).count();
     
     // List deleting from middle
     start = high_resolution_clock::now();
@@ -148,13 +148,13 @@ for (int run = 0; run < RUNS; run++) {
     advance(lstIt, lst.size() / 2);
     lst.erase(lstIt);
     end = high_resolution_clock::now();
-    auto lstDeleteTime = duration_cast<microseconds>(end - start);
+    results[run][DELETING][VECTOR] = duration_cast<microseconds>(end - start).count();
     
     // Set deleting (remove "TESTCODE")
     start = high_resolution_clock::now();
     st.erase("TESTCODE");
     end = high_resolution_clock::now();
-    auto setDeleteTime = duration_cast<microseconds>(end - start);
+    results[run][DELETING][VECTOR] = duration_cast<microseconds>(end - start).count();
     
     cout << "Vector: " <<results[run][SORTING][VECTOR] << " microseconds\n";
     cout << "List: " << results[run][SORTING][LIST] << " microseconds\n";
