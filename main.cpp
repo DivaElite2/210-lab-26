@@ -1,3 +1,5 @@
+//Lateefah Camacho 
+//COMSC 210
 #include <iostream>
 #include <chrono>
 #include <list>
@@ -15,7 +17,7 @@ const int RUNS = 15;
 const int RACES = 4;
 const int STRUCTURES = 3;
 
-// ahh ha!
+// indicies
 const int READING = 0;
 const int SORTING = 1;
 const int INSERTING = 2;
@@ -28,10 +30,10 @@ const int SET = 2;
 
 
 int main() {
-    // loop to run races(1) long long instead of int? lets try it. for timing purpose go through the steps(2)
-//created 3D array (3) Im assuming the loop should be for all races?
+  cout<< "Number of simulations: " << RUNS <<endl;
+//created 3D array 
 long long results[RUNS][RACES][STRUCTURES] ={0};
-
+  // loop to run races
 for (int run = 0; run< 2; run++) {
  // Data structures for the races
    
