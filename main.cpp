@@ -34,7 +34,7 @@ int main() {
 //created 3D array 
 long long results[RUNS][RACES][STRUCTURES] ={0};
   // loop to run races
-for (int run = 0; run< 2; run++) {
+for (int run = 0; run < RUNS; run++) {
  // Data structures for the races
    
    vector<string> vec;
