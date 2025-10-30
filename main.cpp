@@ -63,6 +63,7 @@ for (int run = 0; run < RUNS; run++) {
     file.clear();
     file.seekg(0);
     start = high_resolution_clock::now();
+    
     while (getline(file, line)) {
         lst.push_back(line);
     }
