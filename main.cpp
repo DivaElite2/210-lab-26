@@ -57,7 +57,7 @@ for (int run = 0; run < RUNS; run++) {
     auto start = high_resolution_clock::now();
    
     auto end = high_resolution_clock::now();
-    auto vecReadTime = duration_cast<microseconds>(end - start);
+    results[run][READING][SET]= duration_cast<microseconds>(end - start).count();
     
     // List reading  
     file.clear();
@@ -67,7 +67,7 @@ for (int run = 0; run < RUNS; run++) {
         lst.push_back(line);
     }
     end = high_resolution_clock::now();
-    auto lstReadTime = duration_cast<microseconds>(end - start);
+    results[run][READING][SET] = duration_cast<microseconds>(end - start).count();
     
     // Set reading
     file.clear();
@@ -77,7 +77,7 @@ for (int run = 0; run < RUNS; run++) {
         st.insert(line);
     }
     end = high_resolution_clock::now();
-    results[run][READING][VECTOR] = duration_cast<microseconds>(end - start).count();
+    results[run][READING][SET] = duration_cast<microseconds>(end - start).count();
     file.close();
     
     cout << "Vector: " << results[run][READING][VECTOR] << " microseconds\n";
