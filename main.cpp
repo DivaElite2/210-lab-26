@@ -80,9 +80,9 @@ for (int run = 0; run < RUNS; run++) {
     auto setReadTime = duration_cast<microseconds>(end - start);
     file.close();
     
-    cout << "Vector: " << vecReadTime.count() << " microseconds\n";
-    cout << "List: " << lstReadTime.count() << " microseconds\n";
-    cout << "Set: " << setReadTime.count() << " microseconds\n\n";
+    cout << "Vector: " << results[run][READING][VECTOR] << " microseconds\n";
+    cout << "List: " << results[run][READING][LIST] << " microseconds\n";
+    cout << "Set: " << results[run][READING][SET]<< " microseconds\n\n";
     
     // RACE 2: SORTING
     cout << "=== RACE 2: SORTING ===\n";
@@ -96,11 +96,11 @@ for (int run = 0; run < RUNS; run++) {
     start = high_resolution_clock::now();
     lst.sort();
     end = high_resolution_clock::now();
-    results[run][SORTING][VECTOR]= duration_cast<microseconds>(end - start).count();
+    results[run][SORTING][LIST]= duration_cast<microseconds>(end - start).count();
     
-    cout << "Vector: " <<  results[run][SORTING][VECTOR]<< " microseconds\n";
-    cout << "List: " <<  results[run][SORTING][VECTOR]<< " microseconds\n";
-    cout <<  results[run][SORTING][VECTOR]<<"(already sorted)\n\n";
+    cout << "Vector: " << results[run][SORTING][VECTOR]<< " microseconds\n";
+    cout << "List: " <<  results[run][SORTING][LIST]<< " microseconds\n";
+    cout <<  "Set:" <<results[run][SORTING][SET]<<"(already sorted)\n\n";
     
     // RACE 3: INSERTING
     cout << "=== RACE 3: INSERTING 'TESTCODE' ===\n";
@@ -127,9 +127,9 @@ for (int run = 0; run < RUNS; run++) {
     end = high_resolution_clock::now();
     auto setInsertTime = duration_cast<microseconds>(end - start);
     
-    cout << "Vector: " << vecInsertTime.count() << " microseconds\n";
-    cout << "List: " << lstInsertTime.count() << " microseconds\n";
-    cout << "Set: " << setInsertTime.count() << " microseconds\n\n";
+    cout << "Vector: " << results[run][SORTING][VECTOR] << " microseconds\n";
+    cout << "List: " << results[run][SORTING][LIST]<< " microseconds\n";
+    cout << "Set: " << results[run][SORTING][SET] << " microseconds\n\n";
     
     // RACE 4: DELETING
     cout << "=== RACE 4: DELETING MIDDLE ELEMENT ===\n";
@@ -156,9 +156,9 @@ for (int run = 0; run < RUNS; run++) {
     end = high_resolution_clock::now();
     auto setDeleteTime = duration_cast<microseconds>(end - start);
     
-    cout << "Vector: " << vecDeleteTime.count() << " microseconds\n";
-    cout << "List: " << lstDeleteTime.count() << " microseconds\n";
-    cout << "Set: " << setDeleteTime.count() << " microseconds\n";
+    cout << "Vector: " <<results[run][SORTING][VECTOR] << " microseconds\n";
+    cout << "List: " << results[run][SORTING][LIST] << " microseconds\n";
+    cout << "Set: " << results[run][SORTING][SET] << " microseconds\n";
     
     return 0;
    }
