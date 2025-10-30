@@ -15,8 +15,22 @@ const int RUNS = 15;
 const int RACES = 4;
 const int STRUCTURES = 3;
 
-nt main() {
+// ahh ha!
+const int READING = 0;
+const int SORTING = 1;
+const int INSERTING = 2;
+const int DELETING = 3;
 
+// structure 
+const int
+
+
+int main() {
+    // loop to run races(1) long long instead of int? lets try it. for timing purpose go through the steps(2)
+//created 3D array (3) Im assuming the loop should be for all races?
+long long results[RUNS][RACES][STRUCTURES] ={0};
+
+for (int run = 0; run< 2; run++) {
  // Data structures for the races
    
    vector<string> vec;
@@ -68,18 +82,17 @@ nt main() {
     
     // RACE 2: SORTING
     cout << "=== RACE 2: SORTING ===\n";
-    long long results [RUNS][RACES][STRUCTURES] ={0};
     // Vector sorting
     start = high_resolution_clock::now();
     sort(vec.begin(), vec.end());
     end = high_resolution_clock::now();
-    auto vecSortTime = duration_cast<microseconds>(end - start);
+    results[run][SORTING][VECTOR]= duration_cast<microseconds>(end - start).count();// changing race to use array
     
     // List sorting
     start = high_resolution_clock::now();
     lst.sort();
     end = high_resolution_clock::now();
-    results [RUNS][RACES][STRUCTURES] = duration_cast<microseconds>(end - start);
+    auto  = duration_cast<microseconds>(end - start);
     
     cout << "Vector: " << vecSortTime.count() << " microseconds\n";
     cout << "List: " << lstSortTime.count() << " microseconds\n";
@@ -144,6 +157,7 @@ nt main() {
     cout << "Set: " << setDeleteTime.count() << " microseconds\n";
     
     return 0;
+   }
 }
 /* syntax examples:
 
