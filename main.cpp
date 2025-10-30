@@ -30,10 +30,13 @@ const int SET = 2;
 
 
 int main() {
+    
   cout<< "Number of simulations: " << RUNS <<endl;
+
 //created 3D array 
 long long results[RUNS][RACES][STRUCTURES] ={0};
-  // loop to run races
+  
+// loop to run races
 for (int run = 0; run < RUNS; run++) {
  // Data structures for the races
    
@@ -48,8 +51,6 @@ for (int run = 0; run < RUNS; run++) {
     cout<< "Error cannot open codes.txt\n";
       return 1;
    }
-   
-    
     // RACE 1: READING
     cout << "=== RACE 1: READING 20,000 ELEMENTS ===\n";
     
@@ -63,7 +64,7 @@ for (int run = 0; run < RUNS; run++) {
     file.clear();
     file.seekg(0);
     start = high_resolution_clock::now();
-    
+
     while (getline(file, line)) {
         lst.push_back(line);
     }
