@@ -22,7 +22,9 @@ const int INSERTING = 2;
 const int DELETING = 3;
 
 // structure 
-const int
+const int VECTOR = 0;
+const int LIST =1;
+const int SET = 2;
 
 
 int main() {
@@ -92,11 +94,11 @@ for (int run = 0; run< 2; run++) {
     start = high_resolution_clock::now();
     lst.sort();
     end = high_resolution_clock::now();
-    auto  = duration_cast<microseconds>(end - start);
+    results[run][SORTING][VECTOR]= duration_cast<microseconds>(end - start).count();
     
-    cout << "Vector: " << vecSortTime.count() << " microseconds\n";
-    cout << "List: " << lstSortTime.count() << " microseconds\n";
-    cout << "Set: -1 (already sorted)\n\n";
+    cout << "Vector: " <<  results[run][SORTING][VECTOR]<< " microseconds\n";
+    cout << "List: " <<  results[run][SORTING][VECTOR]<< " microseconds\n";
+    cout <<  results[run][SORTING][VECTOR]<<"(already sorted)\n\n";
     
     // RACE 3: INSERTING
     cout << "=== RACE 3: INSERTING 'TESTCODE' ===\n";
